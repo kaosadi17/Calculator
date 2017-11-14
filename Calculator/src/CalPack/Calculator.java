@@ -199,6 +199,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jbtn18.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn18.setText("=");
+        jbtn18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn18ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -378,6 +383,35 @@ public class Calculator extends javax.swing.JFrame {
             ops = ops * (-1);
             jtxtdis.setText(String.valueOf(ops));
     }//GEN-LAST:event_jbtn15ActionPerformed
+
+    private void jbtn18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn18ActionPerformed
+            String ans;
+            secondNum = Double.parseDouble(jtxtdis.getText());
+            
+            if (operation == "+"){
+                result = firstNum + secondNum;
+                ans = String.format("%.0f", result);
+                jtxtdis.setText(ans);
+            }
+            
+            else if (operation == "-"){
+                result = firstNum - secondNum;
+                ans = String.format("%.0f", result);
+                jtxtdis.setText(ans);
+            }
+            
+            else if (operation == "*"){
+                result = firstNum * secondNum;
+                ans = String.format("%.0f", result);
+                jtxtdis.setText(ans);
+            }
+            
+            else if (operation == "/"){
+                result = firstNum / secondNum;
+                ans = String.format("%.0f", result);
+                jtxtdis.setText(ans);
+            }
+    }//GEN-LAST:event_jbtn18ActionPerformed
 
     /**
      * @param args the command line arguments
