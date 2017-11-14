@@ -143,21 +143,51 @@ public class Calculator extends javax.swing.JFrame {
 
         jbtn11.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn11.setText("+");
+        jbtn11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn11ActionPerformed(evt);
+            }
+        });
 
         jbtn12.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn12.setText("-");
+        jbtn12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn12ActionPerformed(evt);
+            }
+        });
 
         jbtn13.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn13.setText("/");
+        jbtn13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn13ActionPerformed(evt);
+            }
+        });
 
         jbtn14.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn14.setText("*");
+        jbtn14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn14ActionPerformed(evt);
+            }
+        });
 
         jbtn15.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn15.setText("+/-");
+        jbtn15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn15ActionPerformed(evt);
+            }
+        });
 
         jbtn16.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn16.setText(".");
+        jbtn16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn16ActionPerformed(evt);
+            }
+        });
 
         jbtn17.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn17.setText("C");
@@ -313,6 +343,41 @@ public class Calculator extends javax.swing.JFrame {
     private void jbtn17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn17ActionPerformed
             jtxtdis.setText("");
     }//GEN-LAST:event_jbtn17ActionPerformed
+
+    private void jbtn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn11ActionPerformed
+            firstNum = Double.parseDouble(jtxtdis.getText());
+            jtxtdis.setText("");
+            operation = "+";
+    }//GEN-LAST:event_jbtn11ActionPerformed
+
+    private void jbtn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn12ActionPerformed
+            firstNum = Double.parseDouble(jtxtdis.getText());
+            jtxtdis.setText("");
+            operation = "-";
+    }//GEN-LAST:event_jbtn12ActionPerformed
+
+    private void jbtn13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn13ActionPerformed
+            firstNum = Double.parseDouble(jtxtdis.getText());
+            jtxtdis.setText("");
+            operation = "/";
+    }//GEN-LAST:event_jbtn13ActionPerformed
+
+    private void jbtn14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn14ActionPerformed
+            firstNum = Double.parseDouble(jtxtdis.getText());
+            jtxtdis.setText("");
+            operation = "*";
+    }//GEN-LAST:event_jbtn14ActionPerformed
+
+    private void jbtn16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn16ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn16.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn16ActionPerformed
+
+    private void jbtn15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn15ActionPerformed
+            double ops = Double.parseDouble(String.valueOf(jtxtdis.getText()));
+            ops = ops * (-1);
+            jtxtdis.setText(String.valueOf(ops));
+    }//GEN-LAST:event_jbtn15ActionPerformed
 
     /**
      * @param args the command line arguments
