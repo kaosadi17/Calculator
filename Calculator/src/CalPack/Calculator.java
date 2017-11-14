@@ -10,7 +10,11 @@ package CalPack;
  * @author amalio
  */
 public class Calculator extends javax.swing.JFrame {
-
+    
+    double firstNum;
+    double secondNum;
+    double result;
+    String operation;
     /**
      * Creates new form Calculator
      */
@@ -27,7 +31,7 @@ public class Calculator extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        jtxtdis = new javax.swing.JTextField();
         jbtn1 = new javax.swing.JButton();
         jbtn2 = new javax.swing.JButton();
         jbtn3 = new javax.swing.JButton();
@@ -49,38 +53,93 @@ public class Calculator extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jtxtdis.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jtxtdis.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jtxtdis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtdisActionPerformed(evt);
+            }
+        });
 
         jbtn1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn1.setText("1");
+        jbtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn1ActionPerformed(evt);
+            }
+        });
 
         jbtn2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn2.setText("2");
+        jbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn2ActionPerformed(evt);
+            }
+        });
 
         jbtn3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn3.setText("3");
+        jbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn3ActionPerformed(evt);
+            }
+        });
 
         jbtn4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn4.setText("4");
+        jbtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn4ActionPerformed(evt);
+            }
+        });
 
         jbtn5.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn5.setText("5");
+        jbtn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn5ActionPerformed(evt);
+            }
+        });
 
         jbtn6.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn6.setText("6");
+        jbtn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn6ActionPerformed(evt);
+            }
+        });
 
         jbtn7.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn7.setText("7");
+        jbtn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn7ActionPerformed(evt);
+            }
+        });
 
         jbtn8.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn8.setText("8");
+        jbtn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn8ActionPerformed(evt);
+            }
+        });
 
         jbtn9.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn9.setText("9");
+        jbtn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn9ActionPerformed(evt);
+            }
+        });
 
         jbtn10.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn10.setText("0");
+        jbtn10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn10ActionPerformed(evt);
+            }
+        });
 
         jbtn11.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn11.setText("+");
@@ -102,6 +161,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jbtn17.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn17.setText("C");
+        jbtn17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn17ActionPerformed(evt);
+            }
+        });
 
         jbtn18.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jbtn18.setText("=");
@@ -110,7 +174,7 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1)
+            .addComponent(jtxtdis)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +221,7 @@ public class Calculator extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtdis, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,6 +255,64 @@ public class Calculator extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtxtdisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtdisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtdisActionPerformed
+
+    private void jbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn1ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn1.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn1ActionPerformed
+
+    private void jbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn2ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn2.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn2ActionPerformed
+
+    private void jbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn3ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn3.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn3ActionPerformed
+
+    private void jbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn4ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn4.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn4ActionPerformed
+
+    private void jbtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn5ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn5.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn5ActionPerformed
+
+    private void jbtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn6ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn6.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn6ActionPerformed
+
+    private void jbtn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn7ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn7.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn7ActionPerformed
+
+    private void jbtn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn8ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn8.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn8ActionPerformed
+
+    private void jbtn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn9ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn9.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn9ActionPerformed
+
+    private void jbtn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn10ActionPerformed
+            String enterNumber = jtxtdis.getText() + jbtn10.getText();
+            jtxtdis.setText(enterNumber);
+    }//GEN-LAST:event_jbtn10ActionPerformed
+
+    private void jbtn17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn17ActionPerformed
+            jtxtdis.setText("");
+    }//GEN-LAST:event_jbtn17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,7 +350,6 @@ public class Calculator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtn1;
     private javax.swing.JButton jbtn10;
     private javax.swing.JButton jbtn11;
@@ -247,5 +368,6 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton jbtn7;
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
+    private javax.swing.JTextField jtxtdis;
     // End of variables declaration//GEN-END:variables
 }
